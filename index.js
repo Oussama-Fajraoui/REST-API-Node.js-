@@ -3,8 +3,10 @@ const http = require('http');
 const GetReq = require('./routes/GetRequet');
 const PostReq = require('./routes/PostRequest');
 const PulReq = require('./routes/PutRequest')
+const DeleteReq  =require('./routes/DeleteRequest');
 
 let movies = require('./api/movies.json');
+const DeleteRequest = require('./routes/DeleteRequest');
 
 
 const PORT = process.env.PORT || 5001;
@@ -23,6 +25,9 @@ const server = http.createServer((req,res) => {
         case "PUT":
             PulReq(req,res);
             break;
+            case "DELETE":
+            DeleteRequest(req,res);
+            break;
             default: 
             res.statusCode = 404;
             res.setHeader("Content-Type", "application/json");
@@ -36,3 +41,5 @@ const server = http.createServer((req,res) => {
 server.listen(PORT, () => {
     console.log(`Server is running on port : ${PORT}`);
 });
+
+//3711087e-2863-427e-86d8-1548c3e7b0db
