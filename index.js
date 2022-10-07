@@ -2,6 +2,7 @@ const http = require('http');
 // require("dotenv").config();
 const GetReq = require('./routes/GetRequet');
 const PostReq = require('./routes/PostRequest');
+const PulReq = require('./routes/PutRequest')
 
 let movies = require('./api/movies.json');
 
@@ -18,6 +19,9 @@ const server = http.createServer((req,res) => {
             break;
         case "POST":
             PostReq(req, res);
+            break;
+        case "PUT":
+            PulReq(req,res);
             break;
             default: 
             res.statusCode = 404;
