@@ -26,7 +26,7 @@ const server = http.createServer((req,res) => {
             PulReq(req,res);
             break;
             case "DELETE":
-            DeleteRequest(req,res);
+            DeleteReq(req,res);
             break;
             default: 
             res.statusCode = 404;
